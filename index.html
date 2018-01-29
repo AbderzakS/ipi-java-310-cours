@@ -1,0 +1,587 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>IPI - Cours de Java - Java 310</title>
+    
+    <meta name="description" content="" />
+    <meta name="author" content="Pierre-Julien VILLOUD" />
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/idea.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="my-navbar">
+  <a class="navbar-brand" href="index.html">
+    <img src="img/ipi.jpg" width="30" height="30" alt=""> Cours Java 310
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav nav-pills mr-auto">
+      
+    </ul>
+    <span class="navbar-text">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-primary" href="https://github.com/pjvilloud/ipi-java-310-ex" target="_blank"><i class="fa fa-icon fa-gamepad"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="mailto:pjvilloud@protonmail.com"><i class="fa fa-icon fa-envelope"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="https://github.com/pjvilloud" target="_blank"><i class="fa fa-icon fa-github"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="https://linkedin.com/pjvilloud" target="_blank"><i class="fa fa-icon fa-linkedin"></i></a>&nbsp;
+            <a class="btn btn-primary" href="#" id="numSlide">1</a>
+        </div>
+    </span>
+  </div>
+</nav>
+<div class="progress">
+  <div id="progress" class="progress-bar" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container-fluid" id="impress">
+
+    <div id="accueil" class="step slide" data-rel-x="0" data-y=0>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container text-center">
+            <h1 class="display-3">Bienvenue !</h1>
+            <p class="lead">
+                <h2>Pierre-Julien VILLOUD</h2>
+                <div class="big-top-margin">
+                    <img src="img/pjvilloud.jpg" class="img-bienvenue rounded mx-auto d-block" alt="Pierre-Julien VILLOUD">
+                </div>
+                <div class="big-top-margin">
+                    <h3><i class="fa fa-icon fa-envelope-square"></i>&nbsp;<a href="mailto:pjvilloud@protonmail.com">pjvilloud@protonmail.com</a></h3>
+                    <h3><i class="fa fa-icon fa-github-square"></i>&nbsp;<a href="https://github.com/pjvilloud" target="_blank">https://github.com/pjvilloud</a></h3>
+                    <h3><i class="fa fa-icon fa-linkedin-square"></i>&nbsp;<a href="https://linkedin.com/pjvilloud" target="_blank">https://linkedin.com/pjvilloud</a></h3>
+                    <h3><i class="fa fa-icon fa-globe"></i>&nbsp;<a href="http://pjvilloud.github.io" target="_blank">http://pjvilloud.github.io</a></h3>
+                </div>
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <div id="introduction" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Introduction</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les applications web sont aujourd'hui incontournables. Nous discuterons dans ce cours des éléments nécessaires à la mise en place d'une application Web dynamique.
+            </div>
+          </div>
+          <div class="container small-font big-top-margin">
+            <ul class="list-group">
+              <li class="list-group-item">Le navigateur</li>
+              <li class="list-group-item">Le serveur web</li>
+              <li class="list-group-item">Les différentes architectures</li>
+            </ul>
+          </div>
+          <div class="container-fluid big-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le contenu pourra être ajusté en fonction de vos connaissances et de vos attentes
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="navigateur" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Le navigateur</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le navigateur est un logiciel permettant d'accéder et d'afficher les sites Internet présents sur le <em>World Wide Web</em>.
+            </div>
+          </div>
+          <div class="container">
+            <img src="img/browsers.png" alt="">
+            <div class="small-font">
+            <ul class="list-group">
+              <li class="list-group-item">Composants de communication basés sur les standards réseaux</li>
+              <li class="list-group-item">Moteurs de rendu basés sur les standards web</li>
+              <li class="list-group-item">Interface utilisateur</li>
+              <li class="list-group-item">Plugins</li>
+            </ul>
+            </div>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le premier navigateur a été conçu par Tim Berners-Lee en 1990
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="standard" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Les standards</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Avant de rentrer dans le détail des standards réseaux, voyons les différentes couches du <em>modèle OSI</em> (Open Systems Interconnection) qui standardise les échanges réseaux entre systèmes informatiques, ainsi que le modèle <em>TCP/IP</em> utilisé plus communément pour représenter le <em>modèle Internet</em>.
+            </div>
+          </div>
+          <div class="container small-font">
+            <img src="img/osimodel.png" class="little-top-margin" alt="" height="540">
+            <img src="img/ositcp.png" alt="" height="560">
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Nous allons laisser les couches <em>Transport</em>, <em>Internet</em> et <em>Accès réseau</em> pour se concentrer sur la couche <em>application</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="standard-http" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Le protocole HTTP</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;<em>HTTP</em> ou <strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol est le protocole de communication basé sur le principe de client serveur utilisé sur le <em>World Wide Web</em>. Il existe plusieurs <em>méthodes</em> ou <em>commandes</em> que le client peut envoyer au serveur.
+            </div>
+          </div>
+          <div class="container-fluid small-font little-top-margin">
+            <div class="row">
+            <div class="col-lg-4"><img src="img/http.png" class="little-top-margin"></div>
+            <div class="col-lg-8 smaller-font text-left">
+              <div class="row">
+                <div class="col-lg-6">
+                  <pre><code>Ligne de commande (Commande, URL, Version de protocole)
+En-tête(s) de requête
+[Ligne vide]
+Corps de requête
+
+
+
+
+
+
+Ligne de statut (Version, Code-réponse, Texte-réponse)
+En-tête(s) de réponse
+[Ligne vide]
+Corps de réponse</code></pre>
+                </div>
+                <div class="col-lg-6">
+                  <pre><code>GET /page.html HTTP/1.0
+Host: example.com
+Referer: http://example.com/
+User-Agent: CERN-LineMode/2.15 libwww/2.17b3
+
+
+
+
+
+
+HTTP/1.0 200 OK
+Date: Fri, 31 Dec 1999 23:59:59 GMT
+Server: Apache/0.8.4
+Content-Type: text/html
+Content-Length: 59
+Expires: Sat, 01 Jan 2000 00:59:59 GMT
+Last-modified: Fri, 09 Aug 1996 14:21:40 GMT
+
+&lt;TITLE&gt;Exemple&lt;/TITLE&gt;
+&lt;P&gt;Ceci est une page d'exemple.&lt;/P&gt;
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Nous allons voir maintenant les différentes méthodes (ou commandes) ainsi que les codes réponses.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div id="standard-methodes" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Méthodes HTTP</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voici les méthodes possibles avec le standard HTTP
+          </div>
+        </div>
+        <div class="container small-font big-top-margin">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-success"><strong>GET</strong> : Méthode la plus courante, utilise pour demander une ressource sans modifier cette dernière.</li>
+            <li class="list-group-item list-group-item-warning"><strong>POST</strong> : Méthode utilisée pour transmettre des données impliquant une création ou une modification sur une ressource</li>
+            <li class="list-group-item list-group-item-warning"><strong>PUT</strong> : Méthode utilisée pour remplacer totalement ou ajouter une ressource</li>
+            <li class="list-group-item list-group-item-warning"><strong>PATCH</strong> : Méthode utilisée pour remplacer partiellement une ressource</li>
+            <li class="list-group-item list-group-item-danger"><strong>DELETE</strong> : Méthode utilisée pour supprimer une ressource</li>
+            <li class="list-group-item">HEAD, OPTIONS, CONNECT, TRACE...</li>
+          </ul>
+        </div>
+        <div class="container-fluid big-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp; Les méthodes <span class="text-warning">POST, PUT et PATCH</span> requièrent un corps de requête contenant les données à envoyer au serveur.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="standard-formats" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Format des données échangées</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les données échangées (envoyées dans une requête HTTP, ou reçues dans une réponse HTTP) peuvent prendre plusieurs formats.
+          </div>
+        </div>
+        <div class="container-fluid small-font row">
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item"><br><br><br>Consultation d'une page web<br><br><br><br></li>
+            <li class="list-group-item">Formulaire</li>
+            <li class="list-group-item"><br><br><br><br>Web Service<br><br><br><br><br></li>
+          </ul>
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item"><code>image/png<br><br>text/html<br><br>text/javascript<br><br>text/css<br></code></li>
+            <li class="list-group-item"><code>application/x-www-form-urlencoded</code></li>
+            <li class="list-group-item"><code><br><br><br><br>application/json</code> ou <code>application/xml</code><br><br><br><br><br></li>
+          </ul>
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item text-left"><pre><code class="html no-bottom-margin">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;&lt;title&gt;Titre&lt;/title&gt;&lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre></li>
+            <li class="list-group-item">marque=Peugeot&modele=208</li>
+            <li class="list-group-item text-left"><pre><code class="json">{
+  marque: "Peugeot",
+  modele: "208"
+}</code></pre><pre><code class="xml">&lt;vehicule&gt;
+  &lt;marque&gt;Peugeot&lt;/marque&gt;
+  &lt;modele&gt;208&lt;/modele&gt; 
+&lt;/vehicule&gt;</code></pre></li>
+          </ul>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Lorsqu'il y a échange de données, le <em>client</em> ou le <em>serveur</em> doit spécifier dans l'en-tête <em>Content-Type</em> le type des données qu'il envoie.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="standard-errors" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Codes erreurs HTTP</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voici les différents codes erreurs que peut retourner une requête HTTP
+          </div>
+        </div>
+        <div class="container-fluid small-font row big-top-margin">
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item list-group-item-success">2xx : Requête OK !</li>
+            <li class="list-group-item list-group-item-warning">3xx : Redirections</li>
+            <li class="list-group-item list-group-item-danger">4xx : Erreurs client</li>
+            <li class="list-group-item list-group-item-danger">5xx : Erreurs serveur</li>
+          </ul>
+          <ul class="list-group col-lg-8">
+            <li class="list-group-item list-group-item-success">200 OK, 204 NO Content</li>
+            <li class="list-group-item list-group-item-warning">301 Moved Permanently, 302 Moved Temporarily</li>
+            <li class="list-group-item list-group-item-danger">400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 409 Conflict</li>
+            <li class="list-group-item list-group-item-danger">500 Internal Server Error</li>
+          </ul>
+        </div>
+        <div class="container-fluid big-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp; Il y en a beaucoup <a href="https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP" target="_blank">d'autres</a>...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div id="serveur" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Le serveur web</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le serveur web est la machine que contacte le client pour obtenir les ressources (fichiers HTML, JS, CSS ou autre).
+          </div>
+        </div>
+        <div class="container small-font">
+          <img src="img/naache.png" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ce type de serveur peut embarqué des modules permettant l'exécution de scripts afin de dynamiser le contenu, comme par exemple PHP ou PERL, ou encore Python. 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="serveur-apache" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Apache</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le serveur Apache est un des serveurs web les plus populaire, du fait notamment de sa license libre. Il possède de nombreux modules permettant l'interprétation de langages de script comme PHP, Perl, Python ou Ruby.
+          </div>
+        </div>
+        <div class="container small-font text-left big-top-margin">
+          <img src="img/apache.svg" alt="">
+        </div>
+        <div class="container-fluid big-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;<a href="https://httpd.apache.org/" target="_blank">Documentation d'Apache</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="serveur-nginx" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Nginx</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Nginx est un autre serveur web reconnu pour ces hautes performances et sa faible consommation mémoire. Il est souvent utilisé aussi pour sa fonctionnalité de proxy inverse.
+          </div>
+        </div>
+        <div class="container small-font text-left">
+          <img src="img/nginx.png" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;<a href="http://nginx.org/" target="_blank">Documentation Nginx</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="serveurapp" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Le serveur d'application</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le serveur d'application propose un <em>contexte d'exécution</em> permettant de développer des composants applicatifs avec des langages tels que Java ou C# nécessitant chacun en environnement spécifique (JVM ou plateforme .NET).
+          </div>
+        </div>
+        <div class="container small-font ">
+          <img src="img/tomcat-1.png" alt="" height="600">
+          <p><a href="http://tomcat.apache.org/" target="_blank">Documentation de Tomcat</a></p>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ces serveurs permettent le développement d'applications complexes et multiples.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="serveurapp-tomcat" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Tomcat</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le serveur d'application Tomcat peut agir comme un serveur web classique mais il donne la possibilité de gérer JSP et servlets. Nous verrons la notion de servlet dans le cours Java 320, et les JSP dans le cours 330.
+          </div>
+        </div>
+        <div class="container small-font">
+          <img src="img/tomcat.png" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Pour simplifier cela permet d'utiliser Java pour développer des applications web dynamiques.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="architectures" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Les différentes architectures</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il existe plusieurs modèles permettant la réalisation d'applications web aujourd'hui.
+          </div>
+        </div>
+        <div class="container small-font">
+          <img src="img/archiweb.png" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voyons en détail chacun de ces modèles
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="architectures-0" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web statique</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une application web statique consiste à effectuer des <code>GET</code> sur des ressources (pages HTML, fichiers CSS, images, éventuellement fichiers JS) servies par le serveur.
+          </div>
+        </div>
+        <div class="container small-font big-top-margin">
+          <img src="img/cstatic.jpg" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font big-top-margin" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ce modèle montre rapidement ses limites lorsque l'on veut afficher des éléments à partir de données dynamiques. Le serveur web se contente alors de fournir les ressources.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="architectures-1" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web dynamique serveur</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une première possibilité pour dynamiser une application web consiste à demander au serveur de générer le HTML via un langage de script. 
+          </div>
+        </div>
+        <div class="container-fluid small-font big-top-margin">
+          
+          <div class="row">
+            <div class="col-lg-4 "><img src="img/cserver.jpg" alt=""></div>
+            <div class="col-lg-8"><img src="img/pythonphp.jpg" alt="" height="275"></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font big-top-margin" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;C'est ce qu'il se passe dans une application web PHP classique. Le serveur exécute dynamiquement les scripts contenu dans les pages avant de servir le résultat au client sous forme de HTML.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="architectures-2" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web dynamique AJAX</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une deuxième possibilité qui vient souvent en complément du modèle précédent consiste à effectuer une requête au serveur en récupérant des données ou des fragments HTML afin de mettre à jour seulement une partie de la page sans nécessité de recharger toute la page.
+          </div>
+        </div>
+        <div class="container small-font big-top-margin">
+          <img src="img/ajax.jpg" alt="">
+        </div>
+        <div class="container-fluid big-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;L'intérêt de cette technique est la réactivité de l'interface du fait de la réduction du nombres et de la taille des requêtes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="architectures-3" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web dynamique MV* client </h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Un modèle émergeant depuis quelques années consiste à servir uniquement des ressources statiques (principalement du JS) à l'aide d'un serveur web classique. Le client s'occupe alors de générer les pages ainsi que l'arborescence du site. Lorsqu'il est nécessaire de récupérer des données dynamiquement, le client effectue des requêtes HTTP à un serveur d'application.
+          </div>
+        </div>
+        <div class="container-fluid small-font">
+          <div class="row">
+            <div class="col-lg-5"><img src="img/spa.jpg" alt=""></div>
+            <div class="col-lg-7"><img src="img/mvs.png" alt=""></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ainsi, un seul <em>gros</em> appel est effectué au serveur web afin de récupérer les ressources statiques gérées par l'application. Les appels suivants au serveur d'application ne véhiculent que les données manipulées par l'application.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="architectures-choix" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Choix d'une architecture</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il est important de choisir une architecture pertinente en fonction des frameworks et technologies utilisés. Ce choix demande de l'expérience et des connaissances avancées en infrastructure. En entreprise, cela est généralement géré par des équipes dédiées.
+          </div>
+        </div>
+        <div class="container small-font text-left">
+          <pre><code class="java"></code></pre>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il est cependant important de comprendre les différentes parties de ces architectures afin de pouvoir être réactif en cas de problème (rôle des serveurs web, emplacement des logs) et également afin de savoir comment livrer votre application web (format de packaging, endroit de copie)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+
+
+<script src="js/impress.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/script.js"></script>
+
